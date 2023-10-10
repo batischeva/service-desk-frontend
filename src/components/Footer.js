@@ -5,7 +5,7 @@ import '../style/Footer.css';
 const Footer = () => {
   const {user} = useContext(Context);
   return (
-    <footer className='footer'>
+    <footer>
       <span>
         &copy; 2023 Service Desk
       </span>

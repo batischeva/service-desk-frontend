@@ -1,16 +1,25 @@
 import React, { useContext } from 'react';
 import { Context } from '../index';
 import '../style/Header.css';
-import logo from '../icon/header-logo.png';
+import logo from '../icon/header-logo.svg';
+import headerArrow from '../icon/header-arrow.svg';
 
 const Header = () => {
   const {user} = useContext(Context);
   return (
-    <header className='header'>
-      <div className='container'>
-        <a href="#" class="logo">
-          <img class="logo-img" src={logo} alt="Логотип Service Desk"/>
-        </a>
+    <header>
+      <div className='header-container'>
+        <span className='header-logo'>
+          <a href='#'>
+            <img src={logo} alt='Логотип Service Desk' />
+          </a>
+        </span>
+        <span>
+          <a href='#' className='header-company-link'>
+            ООО &laquo;Ленпромарматура&raquo;
+            <img src={headerArrow} />
+          </a>
+        </span>
       </div>
     </header>
   );
