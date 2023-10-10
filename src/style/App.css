@@ -20,7 +20,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   color: #403F4E;
-  background-color: #F1F1F1;
+  background-color: #f4f4f4;
 }
 
 a {
@@ -51,12 +51,4 @@ p {
 
 img {
   max-width: 100%;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 1200px;
-  min-height: 100%;
 }
