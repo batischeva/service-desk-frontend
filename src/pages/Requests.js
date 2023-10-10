@@ -1,10 +1,11 @@
 import React from 'react';
+import '../style/Requests.css';
 
 const Requests = () => {
   return (
-    <div>
+    <main className='container' style={{height: window.innerHeight - 114}}>
       REQUESTS
-    </div>
+    </main>
   );
 };
 
