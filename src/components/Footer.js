@@ -1,0 +1,21 @@
+import React, { useContext } from 'react';
+import { Context } from '../index';
+import '../style/Footer.css';
+
+const Footer = () => {
+  const {user} = useContext(Context);
+  return (
+    <footer className='footer'>
+      <span>
+        &copy; 2023 Service Desk
+      </span>
+      <span>
+        <a href="#">
+          Техподдержка
+        </a>
+      </span>
+    </footer>
+  );
+};
+
+export default Footer;
