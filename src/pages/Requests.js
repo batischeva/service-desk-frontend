@@ -1,11 +1,19 @@
 import React from 'react';
 import '../style/Requests.css';
+import NavBar from '../components/NavBar';
+import Header from '../components/Header';
 
 const Requests = () => {
   return (
-    <main className='container' style={{height: window.innerHeight - 114}}>
-      REQUESTS
-    </main>
+    <div className='workspace'>
+      <NavBar />
+      <div className='main-content' style={{width: window.innerWidth}}>
+        <Header />
+        <main className='container'>
+          REQUESTS
+        </main>
+      </div>
+    </div>
   );
 };
 

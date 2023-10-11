@@ -1,0 +1,12 @@
+.navBarItem {
+  padding: 20px 40px;
+}
+.navBarItem:hover * {
+  color: #55A3FF;
+  fill: #55A3FF;
+}
+.navBarItemLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

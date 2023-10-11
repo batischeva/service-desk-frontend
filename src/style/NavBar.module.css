@@ -1,0 +1,9 @@
+.navBar {
+  width: 20%;
+  background-color: #565568;
+  color: #fff;
+  display: inline-block;
+}
+.navBarItemIcon {
+  fill: #fff;
+}
