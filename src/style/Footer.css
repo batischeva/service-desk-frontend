@@ -6,3 +6,7 @@ footer {
   background: #403F4E;
   color: #DEDEDE;
 }
+
+.footer-link:hover {
+  border-bottom: 1px solid #dedede;
+}

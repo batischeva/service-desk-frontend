@@ -10,7 +10,7 @@ const Footer = () => {
         &copy; 2023 Service Desk
       </span>
       <span>
-        <a href="#">
+        <a href="#" className='footer-link'>
           Техподдержка
         </a>
       </span>

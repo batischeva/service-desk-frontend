@@ -2,6 +2,7 @@ import React from 'react';
 import '../style/Requests.css';
 import NavBar from '../components/NavBar';
 import Header from '../components/Header';
+import ControlPanel from '../components/ControlPanel';
 
 const Requests = () => {
   return (
@@ -9,8 +10,11 @@ const Requests = () => {
       <NavBar />
       <div className='main-content' style={{width: window.innerWidth}}>
         <Header />
-        <main className='container'>
-          REQUESTS
+        <main className='main'>
+          <h1 className='requests-title'>
+            Обращения
+          </h1>
+          <ControlPanel />
         </main>
       </div>
     </div>

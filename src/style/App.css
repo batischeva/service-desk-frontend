@@ -53,6 +53,13 @@ img {
   max-width: 100%;
 }
 
+/* Глобальные стили */
+
+h1 {
+  font-size: 36px;
+  color: #403F4E;
+}
+
 /* Основное содержимое */
 
 .workspace {
@@ -64,4 +71,32 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: start;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 40px;
+}
+
+.main-title {
+  align-self: start;
+}
+
+/* Элементы управления */
+
+.control-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #565568;
+  cursor: pointer;
+}
+
+.control-btn:hover {
+  background-color: #55A3FF;
 }
