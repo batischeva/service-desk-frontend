@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/Auth.css';
 import HeaderAuth from '../components/HeaderAuth';
 
-const Auth = () => {
+const Login = () => {
   return (
     <div>
       <HeaderAuth />
@@ -26,4 +26,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default Login;

@@ -33,8 +33,12 @@
   outline: 0;
 }
 
+.auth-form-input:active {
+  color: #000;
+}
+
 .form-btn {
-  align-self: start;
+  align-self: center;
   padding: 15px 40px;
   font-size: 16px;
   color: #fff;

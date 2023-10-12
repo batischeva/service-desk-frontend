@@ -1,7 +1,7 @@
 import React, { Component, useContext } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
-import {REQUESTS_ROUTE, LOGIN_ROUTE} from '../utils/consts';
+import {LOGIN_ROUTE} from '../utils/consts';
 import {Context} from '../index';
 
 const AppRouter = () => {
