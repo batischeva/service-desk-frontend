@@ -2,7 +2,7 @@ import Admin from "./pages/Admin";
 import Requests from "./pages/Requests";
 import RequestInfo from "./pages/RequestInfo";
 import AddRequestPage from "./pages/AddRequestPage";
-import {ADMIN_ROUTE, REQUESTS_ROUTE, REQUEST_INFO_ROUTE, ADD_REQUEST_ROUTE, REGISTRATION_ROUTE, LOGIN_ROUTE} from './utils/consts';
+import {ADMIN_ROUTE, REQUESTS_ROUTE, ADD_REQUEST_ROUTE, REGISTRATION_ROUTE, LOGIN_ROUTE} from './utils/consts';
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 
@@ -16,7 +16,7 @@ export const authRoutes = [
     Component: Requests
   },
   {
-    path: REQUEST_INFO_ROUTE + '/:id',
+    path: REQUESTS_ROUTE + '/:id',
     Component: RequestInfo
   },
   {

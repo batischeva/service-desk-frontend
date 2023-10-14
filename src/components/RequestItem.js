@@ -1,16 +1,32 @@
 import React, { useContext } from 'react';
-import { observer } from 'mobx-react-lite';
-import { Context } from '../index';
+import '../style/RequestList.css';
+import {useHistory} from 'react-router-dom';
+import { REQUESTS_ROUTE } from '../utils/consts';
 
-const RequestList = observer(() => {
-  const {request} = useContext(Context);
+const RequestItem = ({request}) => {
+  const history = useHistory();
   return (
-    <div>
-      {request.requests.map(request =>
-
-      )}
+    <div className='request-row' onClick={() => history.push(REQUESTS_ROUTE + '/' + request.id)}>
+      <div className='request-row-elem'>
+        Номер
+      </div>
+      <div className='request-row-elem'>
+        Дата
+      </div>
+      <div className='request-row-elem'>
+        Ответственный
+      </div>
+      <div className='request-row-elem'>
+        Пользователь
+      </div>
+      <div className='request-row-elem'>
+        Приоритет
+      </div>
+      <div className='request-row-elem'>
+        Статус
+      </div>
     </div>
   );
-});
+};
 
-export default RequestList;
+export default RequestItem;

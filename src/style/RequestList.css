@@ -1,0 +1,18 @@
+.request-row {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.request-col-header {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.request-row-elem {
+  padding: 20px 10px;
+}
+
+.request-col-heading {
+  padding: 0 10px 20px;
+}

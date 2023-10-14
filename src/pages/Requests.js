@@ -3,6 +3,7 @@ import '../style/Requests.css';
 import NavBar from '../components/NavBar';
 import Header from '../components/Header';
 import ControlPanel from '../components/ControlPanel';
+import RequestList from '../components/RequestList';
 
 const Requests = () => {
   return (
@@ -15,6 +16,7 @@ const Requests = () => {
             Обращения
           </h1>
           <ControlPanel />
+          <RequestList/>
         </main>
       </div>
     </div>

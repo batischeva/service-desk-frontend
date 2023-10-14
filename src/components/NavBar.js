@@ -6,7 +6,7 @@ import NavBarItem from './UI/navbar/NavBarItem';
 import { observer } from 'mobx-react-lite';
 import {Context} from '../index';
 
-import { REQUESTS_ROUTE, ADD_REQUEST_ROUTE, ADMIN_ROUTE } from "../utils/consts";
+import { REQUESTS_ROUTE, ADMIN_ROUTE } from "../utils/consts";
 
 import {ReactComponent as NavBarRequests} from "../icon/requests.svg";
 import {ReactComponent as NavBarClients} from "../icon/clients.svg";
