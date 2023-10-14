@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 import '../style/ControlPanel.css';
 import {ReactComponent as ControlPanelAdd} from "../icon/add.svg";
 import {ReactComponent as ControlPanelEdit} from "../icon/edit.svg";
@@ -6,19 +7,21 @@ import {ReactComponent as ControlPanelDelete} from "../icon/delete.svg";
 import {ReactComponent as ControlPanelSearch} from "../icon/search.svg";
 import {ReactComponent as PaginationArrowNext} from "../icon/pagination-arrow.svg";
 import {ReactComponent as PaginationArrowPrevious} from "../icon/pagination-arrow-previous.svg";
+import { ADD_REQUEST_ROUTE } from '../utils/consts';
 
 const ControlPanel = () => {
+  const history = useHistory();
   return (
     <div className='control-panel'>
       <div className='btn-block'>
-        <button className='add-btn'>
+        <button className='add-btn' onClick={() => history.push(ADD_REQUEST_ROUTE)}>
           <ControlPanelAdd />
           Создать
         </button>
-        <button className='control-btn'>
+        <button className='btn'>
           <ControlPanelEdit />
         </button>
-        <button className='control-btn'>
+        <button className='btn'>
           <ControlPanelDelete />
         </button>
       </div>

@@ -1,47 +1,44 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.auth-header {
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.auth-form {
+.registration-form {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  padding: 60px 120px;
-  background-color: #fff;
+  padding-left: 76px;
 }
 
-.auth-form-fieldset {
+.registration-form-fieldset {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 300px;
 }
 
-.auth-form-input {
+.registration-form-label {
+  display: flex;
+  gap: 40px;
+}
+
+.registration-form-input {
+  flex-grow: 1;
   padding: 0 15px 12px;
   border-bottom: 1px solid #565568;
   font-size: 16px;
   color: #565568;
+  background-color: transparent;
   outline: 0;
 }
 
-.auth-form-input:active {
+.registration-form-input:focus {
   color: #000;
 }
 
-.form-btn {
-  align-self: center;
+.registration-form-btn {
+  align-self: start;
   padding: 15px 40px;
   font-size: 16px;
   color: #fff;
   background-color: #403F4E;
   cursor: pointer;
+}
+
+.registration-form-btn:hover {
+  background-color: #55A3FF;
 }

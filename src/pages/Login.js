@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/Auth.css';
+import '../style/Login.css';
 import HeaderAuth from '../components/HeaderAuth';
 
 const Login = () => {
@@ -7,16 +7,16 @@ const Login = () => {
     <div>
       <HeaderAuth />
       <main className='container' style={{height: window.innerHeight - 124}}>
-        <div className='auth-block'>
-          <h1 className='auth-header'>
+        <div className='login-block'>
+          <h1 className='login-header'>
             Вход в систему
           </h1>
-          <form className='auth-form'>
-            <fieldset className='auth-form-fieldset'>
-              <input type='text' placeholder='Email' className='auth-form-input'/>
-              <input type='text' placeholder='Пароль' className='auth-form-input'/>
+          <form className='login-form'>
+            <fieldset className='login-form-fieldset'>
+              <input type='text' placeholder='E-mail' className='login-form-input'/>
+              <input type='text' placeholder='Пароль' className='login-form-input'/>
             </fieldset>
-            <button className='form-btn'>
+            <button className='login-form-btn'>
               Войти
             </button>
           </form>
