@@ -1,16 +1,14 @@
-import React, { useContext } from 'react';
-import { Context } from '../index';
+import React from 'react';
 import '../style/Footer.css';
 
 const Footer = () => {
-  const {user} = useContext(Context);
   return (
     <footer>
       <span>
         &copy; 2023 Service Desk
       </span>
       <span>
-        <a href="#" className='footer-link'>
+        <a href='/' className='footer-link'>
           Техподдержка
         </a>
       </span>

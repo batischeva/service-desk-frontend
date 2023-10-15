@@ -1,0 +1,12 @@
+.not-found-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 36px;
+  color: #55A3FF;
+}

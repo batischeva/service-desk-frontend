@@ -1,11 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import '../style/NavBar.css';
 import classes from '../style/NavBar.module.css';
 import NavBarLogo from './UI/navbar/NavBarLogo';
 import NavBarUser from './UI/navbar/NavBarUser';
 import NavBarItem from './UI/navbar/NavBarItem';
-import { observer } from 'mobx-react-lite';
-import {Context} from '../index';
 
 import { REQUESTS_ROUTE, ADMIN_ROUTE } from "../utils/consts";
 
@@ -16,8 +14,7 @@ import {ReactComponent as NavBarCases} from "../icon/cases.svg";
 import {ReactComponent as NavBarAnalitics} from "../icon/analitics.svg";
 import {ReactComponent as NavBarAdmin} from "../icon/admin.svg";
 
-const NavBar = observer(() => {
-  const {} = useContext(Context);
+const NavBar = () => {
 
   const initNavItems = [
     {id: 1, name: 'Обращения', link: REQUESTS_ROUTE, icon: <NavBarRequests className={classes.navBarItemIcon} />},
@@ -28,7 +25,7 @@ const NavBar = observer(() => {
     {id: 6, name: 'Администрирование', link: ADMIN_ROUTE, icon: <NavBarAdmin className={classes.navBarItemIcon} />}
   ];
 
-  const [navItems, setNavItems] = useState(initNavItems);
+  const [navItems] = useState(initNavItems);
 
   const navList = navItems.map(navItem => {
 		return <NavBarItem
@@ -50,6 +47,6 @@ const NavBar = observer(() => {
       </nav>
     </div>
   );
-});
+};
 
 export default NavBar;

@@ -4,7 +4,6 @@ import '../style/ControlPanel.css';
 import {ReactComponent as ControlPanelAdd} from "../icon/add.svg";
 import {ReactComponent as ControlPanelEdit} from "../icon/edit.svg";
 import {ReactComponent as ControlPanelDelete} from "../icon/delete.svg";
-import {ReactComponent as ControlPanelSearch} from "../icon/search.svg";
 import {ReactComponent as PaginationArrowNext} from "../icon/pagination-arrow.svg";
 import {ReactComponent as PaginationArrowPrevious} from "../icon/pagination-arrow-previous.svg";
 import { ADD_REQUEST_ROUTE } from '../utils/consts';

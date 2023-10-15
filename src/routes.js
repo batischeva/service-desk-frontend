@@ -2,9 +2,10 @@ import Admin from "./pages/Admin";
 import Requests from "./pages/Requests";
 import RequestInfo from "./pages/RequestInfo";
 import AddRequestPage from "./pages/AddRequestPage";
-import {ADMIN_ROUTE, REQUESTS_ROUTE, ADD_REQUEST_ROUTE, REGISTRATION_ROUTE, LOGIN_ROUTE} from './utils/consts';
+import {ADMIN_ROUTE, REQUESTS_ROUTE, ADD_REQUEST_ROUTE, REGISTRATION_ROUTE, LOGIN_ROUTE, NOT_FOUND_ROUTE} from './utils/consts';
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 export const authRoutes = [
   {
@@ -33,5 +34,9 @@ export const publicRoutes = [
   {
     path: LOGIN_ROUTE,
     Component: Login
+  },
+  {
+    path: NOT_FOUND_ROUTE,
+    Component: NotFound
   },
 ];

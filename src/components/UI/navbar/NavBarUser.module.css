@@ -11,8 +11,9 @@
   gap: 20px;
 }
 
-.navBarUserLink {
+.navBarUserBtn {
   width: 20px;
   height: 20px;
   background: url('../../../icon/logout.svg') no-repeat center center;
+  cursor: pointer;
 }

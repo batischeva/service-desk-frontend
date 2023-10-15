@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../style/RequestList.css';
 import {useHistory} from 'react-router-dom';
 import { REQUESTS_ROUTE } from '../utils/consts';

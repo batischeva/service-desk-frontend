@@ -18,16 +18,10 @@
   background-color: #fff;
 }
 
-.login-form-fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 300px;
-}
-
 .login-form-input {
   padding: 0 15px 12px;
   border-bottom: 1px solid #565568;
+  width: 300px;
   font-size: 16px;
   color: #565568;
   background-color: transparent;

@@ -1,5 +1,4 @@
 import React from 'react';
-import backArrow from '../icon/back-request-arrow.svg';
 import { REQUESTS_ROUTE } from '../utils/consts';
 import '../style/RequestInfo.css';
 
@@ -8,9 +7,7 @@ const RequestInfo = () => {
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>
-        <a href={REQUESTS_ROUTE}>
-          <img src={backArrow}/>
-        </a>
+        <a href={REQUESTS_ROUTE} className='internal-page-link-back'> </a>
         <h1 className='requests-title'>
           Обращение № {request.id}
         </h1>

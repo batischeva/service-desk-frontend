@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import '../style/AddRequestPage.css';
-import backArrow from '../icon/back-request-arrow.svg';
 import { REQUESTS_ROUTE } from '../utils/consts';
 import { Context } from '../index';
 
@@ -9,9 +8,7 @@ const AddRequestPage = () => {
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>
-        <a href={REQUESTS_ROUTE}>
-          <img src={backArrow}/>
-        </a>
+        <a href={REQUESTS_ROUTE} className='internal-page-link-back'> </a>
         <h1>
           Создание нового обращения
         </h1>
