@@ -1,11 +1,9 @@
 import React from 'react';
 import '../style/Login.css';
-import HeaderAuth from '../components/HeaderAuth';
 
 const Login = () => {
   return (
     <div>
-      <HeaderAuth />
       <main className='container' style={{height: window.innerHeight - 124}}>
         <div className='login-block'>
           <h1 className='login-header'>
