@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom';
-import CreateCategory from '../components/modals/CreateCategory';
+import CreateCategoryModal from '../components/modals/CreateCategoryModal';
 import '../style/Admin.css';
 import { REGISTRATION_ROUTE } from '../utils/consts';
 
@@ -24,7 +24,7 @@ const Admin = () => {
       <button className='admin-btn' onClick={() => setCategoryActive(true)}>
         Добавить категорию обращений
       </button>
-      <CreateCategory modalActive={categoryActive} setModalActive={setCategoryActive} />
+      <CreateCategoryModal modalActive={categoryActive} setModalActive={setCategoryActive} />
     </main>
   );
 };

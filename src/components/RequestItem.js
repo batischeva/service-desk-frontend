@@ -8,7 +8,7 @@ const RequestItem = ({request}) => {
   return (
     <div className='request-row' onClick={() => history.push(REQUESTS_ROUTE + '/' + request.id)}>
       <div className='request-row-elem'>
-        Номер
+        {request.id}
       </div>
       <div className='request-row-elem'>
         Дата

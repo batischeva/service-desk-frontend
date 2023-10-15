@@ -10,7 +10,7 @@ const RequestList = observer(() => {
     <div>
       <div className='request-row request-col-header'>
         <div className='request-col-heading'>
-          Номер
+          №
         </div>
         <div className='request-col-heading'>
           Дата

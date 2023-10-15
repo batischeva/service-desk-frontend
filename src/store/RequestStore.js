@@ -2,37 +2,12 @@ import {makeAutoObservable} from 'mobx';
 
 export default class RequestStore {
   constructor() {
-    this._agents = [
-      {id: 1, last_name: 'Ковалёв', first_name: 'Сергей', middle_name: 'Владимирович'},
-      {id: 2, last_name: 'Батищева', first_name: 'Ирина', middle_name: 'Анатольевна'},
-      {id: 3, last_name: 'Смирнов', first_name: 'Дмитрий', middle_name: 'Алексеевич'},
-    ];
-    this._clients = [
-      {id: 1, last_name: 'Федосюк', first_name: 'Виталий', middle_name: 'Анатольевич'},
-      {id: 2, last_name: 'Малышева', first_name: 'Ольга', middle_name: 'Викторовна'},
-    ];
-    this._statuses = [
-      {id: 1, name: 'В обработке'},
-      {id: 2, name: 'В работе'},
-      {id: 3, name: 'Выполнено'},
-      {id: 4, name: 'Отклонено'},
-    ];
-    this._categories = [
-      {id: 1, name: 'Операционная система Windows'},
-      {id: 2, name: 'Офисные программы'},
-      {id: 3, name: 'Система электронного документооборота'},
-      {id: 4, name: 'Прикладные решения 1С'},
-    ];
-    this._priorities = [
-      {id: 1, name: 'Низкий'},
-      {id: 2, name: 'Средний'},
-      {id: 3, name: 'Высокий'},
-    ];
-    this._requests = [
-      {id: 1, description: 'Внедрить 1С-ЭДО'},
-      {id: 2, description: 'Установить обновления ОС на сервере 1С'},
-      {id: 3, description: 'Установить MS Office на мой ПК'},
-    ];
+    this._agents = [];
+    this._clients = [];
+    this._statuses = [];
+    this._categories = [];
+    this._priorities = [];
+    this._requests = [];
     makeAutoObservable(this);
   };
 

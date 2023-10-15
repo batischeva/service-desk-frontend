@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { REQUESTS_ROUTE } from '../utils/consts';
 import '../style/RequestInfo.css';
+import { useParams } from 'react-router-dom';
+import { fetchOneRequest } from '../http/requestAPI';
 
 const RequestInfo = () => {
-  const request = {id: 2, description: 'Установить обновления ОС на сервере 1С'};
+  const [request, setRequest] = useState({});
+  const {id} = useParams();
+
+  useEffect(() => {
+    fetchOneRequest(id).then(data => setRequest(data));
+  }, []);
+
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>

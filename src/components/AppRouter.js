@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import { authRoutes, publicRoutes } from '../routes';
-import {NOT_FOUND_ROUTE} from '../utils/consts';
+import {REQUESTS_ROUTE} from '../utils/consts';
 import {Context} from '../index';
 import NotFound from '../pages/NotFound';
 
@@ -15,7 +15,11 @@ const AppRouter = () => {
       {!user.isAuth && publicRoutes.map(({path, Component}) => 
         <Route key={path} path={path} component={Component} exact/>
       )};
-      <Route path='*' component={NotFound} exact/>
+      {user.isAuth ?
+        <Redirect to={REQUESTS_ROUTE} />
+        :
+        <Route path='*' component={NotFound} exact/>
+      };
     </Switch>
   );
 };
