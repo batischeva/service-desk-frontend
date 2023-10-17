@@ -9,8 +9,10 @@ const RequestInfo = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    fetchOneRequest(id).then(data => setRequest(data));
+    fetchOneRequest(id).then(data => setRequest(data)).catch(err => console.log(err));
   }, []);
+
+  console.log(request)
 
   return (
     <main className='main'>
@@ -23,10 +25,55 @@ const RequestInfo = () => {
       <div className='request-info'>
         <div className='request-info-block'>
           <div className='request-info-label'>
+            Инициатор:
+          </div>
+          <div className='request-info-item'>
+            {request.clientId}
+          </div>
+        </div>
+
+        <div className='request-info-block'>
+          <div className='request-info-label'>
+            Категория:
+          </div>
+          <div className='request-info-item'>
+            {request.categoryId}
+          </div>
+        </div>
+
+        <div className='request-info-block'>
+          <div className='request-info-label'>
             Описание:
           </div>
           <div className='request-info-item'>
             {request.description}
+          </div>
+        </div>
+        
+        <div className='request-info-block'>
+          <div className='request-info-label'>
+            Приоритет:
+          </div>
+          <div className='request-info-item'>
+            {request.priorityId}
+          </div>
+        </div>
+
+        <div className='request-info-block'>
+          <div className='request-info-label'>
+            Ответственный:
+          </div>
+          <div className='request-info-item'>
+            {/* {request.agent.first_name} {request.agent.middle_name} {request.agent.last_name} */}
+          </div>
+        </div>
+
+        <div className='request-info-block'>
+          <div className='request-info-label'>
+            Статус:
+          </div>
+          <div className='request-info-item'>
+            {request.statusId}
           </div>
         </div>
       </div>

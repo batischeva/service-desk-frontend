@@ -7,31 +7,36 @@ import '../style/RequestList.css';
 const RequestList = observer(() => {
   const {request} = useContext(Context);
   return (
-    <div>
-      <div className='request-row request-col-header'>
-        <div className='request-col-heading'>
-          №
-        </div>
-        <div className='request-col-heading'>
-          Дата
-        </div>
-        <div className='request-col-heading'>
-          Ответственный
-        </div>
-        <div className='request-col-heading'>
-          Пользователь
-        </div>
-        <div className='request-col-heading'>
-          Приоритет
-        </div>
-        <div className='request-col-heading'>
-          Статус
-        </div>
-      </div>
-      {request.requests.map(request =>
-        <RequestItem key={request.id} request={request} />
-      )}
-    </div>
+    <table>
+      <thead className='request-col-header'>
+        <tr>
+          <th className='request-col-heading'>
+            №
+          </th>
+          <th className='request-col-heading'>
+            Дата
+          </th>
+          <th className='request-col-heading'>
+            Ответственный
+          </th>
+          <th className='request-col-heading'>
+            Инициатор
+          </th>
+          <th className='request-col-heading'>
+            Приоритет
+          </th>
+          <th className='request-col-heading'>
+            Статус
+          </th>
+          <th className='request-col-heading'/>
+        </tr>
+      </thead>
+      <tbody>
+        {request.requests.map(request =>
+          <RequestItem key={request.id} request={request} />
+        )}
+      </tbody>
+    </table>
   );
 });
 

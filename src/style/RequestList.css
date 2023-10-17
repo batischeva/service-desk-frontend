@@ -1,6 +1,6 @@
 .request-row {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   cursor: pointer;
 }
 
@@ -11,6 +11,13 @@
 
 .request-row-elem {
   padding: 20px 10px;
+  text-align: center;
+}
+
+.request-row-elem-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .request-col-heading {

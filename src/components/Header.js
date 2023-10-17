@@ -11,7 +11,6 @@ const Header = () => {
         <div className='header-container auth-header-container'>
           <a href='/' className='header-company-link'>
             ООО &laquo;Ленпромарматура&raquo;
-            <span className='header-company-link-arrow'/>
           </a>
         </div>
         :
@@ -24,7 +23,6 @@ const Header = () => {
           <span>
             <a href='/' className='header-company-link'>
               ООО &laquo;Ленпромарматура&raquo;
-            <span className='header-company-link-arrow'/>
             </a>
           </span>
         </div>

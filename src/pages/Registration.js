@@ -13,12 +13,18 @@ const Registration = () => {
 
   const register = async () => {
     try {
-      const data = await registration(email, password, role);
+      await registration(email, password, role);
+      alert('Пользователь успешно зарегистрирован!');
       history.push(ADMIN_ROUTE);
     } catch (e) {
       alert(e.response.data.message);
     }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    register();
+  }
 
   return (
     <main className='main'>
@@ -28,7 +34,23 @@ const Registration = () => {
           Регистрация пользователя
         </h1>
       </div>
-      <div className='registration-form'>
+      <form className='registration-form' onSubmit={handleSubmit}>
+        <label className='registration-form-label'>
+          Роль пользователя:
+          <select
+            className='registration-form-input'
+            value={role}
+            onChange={e => setRole(e.target.value)}
+          >
+            <option>Выберите роль</option>
+            <option value='USER'>
+              Пользователь
+            </option>
+            <option value='ADMIN'>
+              Администратор
+            </option>
+          </select>
+        </label>
         <label className='registration-form-label'>
           E-mail:
           <input
@@ -47,26 +69,10 @@ const Registration = () => {
             onChange={e => setPassword(e.target.value)}
           />
         </label>
-        <label className='registration-form-label'>
-          Роль пользователя:
-          <select
-            className='registration-form-input'
-            value={role}
-            onChange={e => setRole(e.target.value)}
-          >
-            <option>Выберите роль</option>
-            <option value='USER'>
-              Пользователь
-            </option>
-            <option value='ADMIN'>
-              Администратор
-            </option>
-          </select>
-        </label>
-        <button className='registration-form-btn' onClick={register}>
+        <button className='registration-form-btn' type='submit'>
           Зарегистрировать
         </button>
-      </div>
+      </form>
     </main>
   );
 };

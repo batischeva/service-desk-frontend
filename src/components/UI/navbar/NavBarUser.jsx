@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import classes from './NavBarUser.module.css';
-import logout from '../../../img/user.png';
+import userPic from '../../../img/avatar.png';
 import { useHistory } from 'react-router-dom';
 import { LOGIN_ROUTE } from '../../../utils/consts';
 import { Context } from '../../../index';
@@ -11,16 +11,20 @@ const NavBarUser = observer(() => {
   const history = useHistory();
 
   const logOut = () => {
-    user.setUser({});
-    user.setIsAuth(false);
-    history.push(LOGIN_ROUTE);
-  }
+    try {
+      user.setUser({});
+      user.setIsAuth(false);
+      history.push(LOGIN_ROUTE);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
+};
 
   return (
     <div className={classes.navBarUserBlock}>
       <div className={classes.navBarUserInfo}>
-        <img src={logout} alt='Изображение пользователя' />
-        И. И. Иванов
+        <img className={classes.navBarUserPic} src={userPic} alt='Изображение пользователя' />
+        И. А. Батищева
       </div>
       <button className={classes.navBarUserBtn} onClick={() => logOut()}/>
     </div>

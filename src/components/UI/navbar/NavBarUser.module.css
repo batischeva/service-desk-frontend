@@ -2,13 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 25px 20px;
+  padding: 0 25px 25px 30px;
 }
 
 .navBarUserInfo {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.navBarUserPic {
+  width: 40px;
+  height: 40px;
 }
 
 .navBarUserBtn {

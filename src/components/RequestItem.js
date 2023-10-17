@@ -2,30 +2,49 @@ import React from 'react';
 import '../style/RequestList.css';
 import {useHistory} from 'react-router-dom';
 import { REQUESTS_ROUTE } from '../utils/consts';
+import {ReactComponent as ControlPanelEdit} from "../icon/edit.svg";
+import {ReactComponent as ControlPanelDelete} from "../icon/delete.svg";
 
 const RequestItem = ({request}) => {
   const history = useHistory();
+
+  const createDate = (str) => {
+    return str.split(' ', 1);
+  };
+
+  const createInitials = (str) => {
+    return str.substring(0, 1) + '.';
+  };
+
   return (
-    <div className='request-row' onClick={() => history.push(REQUESTS_ROUTE + '/' + request.id)}>
-      <div className='request-row-elem'>
+    <tr className='request-row' onClick={() => history.push(REQUESTS_ROUTE + '/' + request.id)}>
+      <td className='request-row-elem'>
         {request.id}
-      </div>
-      <div className='request-row-elem'>
-        Дата
-      </div>
-      <div className='request-row-elem'>
-        Ответственный
-      </div>
-      <div className='request-row-elem'>
-        Пользователь
-      </div>
-      <div className='request-row-elem'>
-        Приоритет
-      </div>
-      <div className='request-row-elem'>
-        Статус
-      </div>
-    </div>
+      </td>
+      <td className='request-row-elem'>
+        {createDate(request.createdAt)}
+      </td>
+      <td className='request-row-elem'>
+        {createInitials(request.agent.first_name)} {createInitials(request.agent.middle_name)} {request.agent.last_name}
+      </td>
+      <td className='request-row-elem'>
+        {createInitials(request.client.first_name)} {createInitials(request.client.middle_name)} {request.client.last_name}
+      </td>
+      <td className='request-row-elem'>
+        {request.priority.name}
+      </td>
+      <td className='request-row-elem'>
+        {request.status.name}
+      </td>
+      <td className='request-row-elem request-row-elem-btn'>
+        <button className='btn'>
+          <ControlPanelEdit />
+        </button>
+        <button className='btn'>
+          <ControlPanelDelete />
+        </button>
+      </td>
+    </tr>
   );
 };
 

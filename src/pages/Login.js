@@ -34,7 +34,7 @@ const Login = observer(() => {
           <h1 className='login-header'>
             Вход в систему
           </h1>
-          <div className='login-form'>
+          <form className='login-form'>
             <input
                 className='login-form-input'
                 type='text'
@@ -52,7 +52,7 @@ const Login = observer(() => {
             <button className='login-form-btn' onClick={signIn}>
               Войти
             </button>
-          </div>
+          </form>
         </div>
       </main>
       <Footer />

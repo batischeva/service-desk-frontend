@@ -53,6 +53,10 @@ img {
   max-width: 100%;
 }
 
+th {
+  font-weight: inherit;
+}
+
 /* Глобальные стили */
 
 h1 {

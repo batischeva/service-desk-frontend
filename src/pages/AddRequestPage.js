@@ -2,23 +2,41 @@ import React, { useContext, useEffect, useState } from 'react';
 import '../style/AddRequestPage.css';
 import { REQUESTS_ROUTE } from '../utils/consts';
 import { Context } from '../index';
-import { fetchAgents, fetchCategories, fetchClients, fetchPriorities } from '../http/requestAPI';
+import { createRequest, fetchAgents, fetchCategories, fetchClients, fetchPriorities } from '../http/requestAPI';
+import { useHistory } from 'react-router-dom';
 
 const AddRequestPage = () => {
+  const history = useHistory();
   const {request} = useContext(Context);
 
-  const [client, setClient] = useState({});
+  const [client, setClient] = useState('');
   const [category, setCategory] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('');
   const [agent, setAgent] = useState('');
 
   useEffect(() => {
-    fetchClients().then(data => request.setClients(data));
-    fetchCategories().then(data => request.setCategories(data));
-    fetchPriorities().then(data => request.setPriorities(data));
-    fetchAgents().then(data => request.setAgents(data));
+    fetchClients().then(data => setClient(data));
+    fetchCategories().then(data => setCategory(data));
+    fetchPriorities().then(data => setPriority(data));
+    fetchAgents().then(data => setAgent(data));
   }, []);
+  
+  const addRequest = async () => {
+    try {
+      await createRequest({
+        description: description,
+        clientId: client,
+        categoryId: category,
+        priorityId: priority,
+        agentId: agent,
+      });
+      alert('Обращение успешно зарегистрировано!');
+      history.push(REQUESTS_ROUTE);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
+  };
 
   return (
     <main className='main'>
@@ -28,7 +46,10 @@ const AddRequestPage = () => {
           Создание нового обращения
         </h1>
       </div>
-      <div className='add-request-form'>
+      <form className='add-request-form' onSubmit={(e) => {
+          e.preventDefault();
+          addRequest();
+        }}>
         <label className='add-request-form-label'>
           Инициатор:
           <select
@@ -40,6 +61,7 @@ const AddRequestPage = () => {
           <option>Выберите ФИО</option>
           {request.clients.map(client => 
             <option
+              key={client.id}
               value={client.id}
             >
               {client.last_name} {client.first_name} {client.middle_name}
@@ -47,48 +69,7 @@ const AddRequestPage = () => {
           )}
           </select>
         </label>
-        <label className='add-request-form-label'>
-          Категория:
-          <select
-            className='add-request-form-input'
-            name='category'
-            value={category}
-            onChange={e => setCategory(e.target.value)}
-          >
-            <option>Выберите категорию</option>
-            {request.categories.map(category => 
-              <option value={category.id}>
-                {category.name}
-              </option>
-            )}
-          </select>
-        </label>
-        <label className='add-request-form-label'>
-          Описание:
-          <textarea
-            className='add-request-form-textarea'
-            rows='2'
-            placeholder='Введите описание'
-            value={description}
-            onChange={e => setDescription(e.target.value)}
-          />
-        </label>
-        <label className='add-request-form-label'>
-          Приоритет:
-          <select
-            className='add-request-form-input'
-            name='priority'
-            value={priority}
-            onChange={e => setPriority(e.target.value)}
-          >
-            <option>Выберите приоритет</option>
-            {request.priorities.map(priority => 
-              <option value={priority.id}>
-                {priority.name}
-              </option>
-            )}
-          </select>
-        </label>
+        
         <label className='add-request-form-label'>
           Ответственный:
           <select
@@ -99,16 +80,70 @@ const AddRequestPage = () => {
           >
             <option>Выберите ФИО</option>
             {request.agents.map(agent => 
-              <option value={agent.id}>
+              <option
+                key={agent.id}
+                value={agent.id}
+              >
                 {agent.last_name} {agent.first_name} {agent.middle_name}
               </option>
             )}
           </select>
         </label>
-        <button className='add-request-form-btn'>
+        
+        <label className='add-request-form-label'>
+          Приоритет:
+          <select
+            className='add-request-form-input'
+            name='priority'
+            value={priority}
+            onChange={e => setPriority(e.target.value)}
+          >
+            <option>Выберите приоритет</option>
+            {request.priorities.map(priority => 
+              <option
+                key={priority.id}
+                value={priority.id}
+              >
+                {priority.name}
+              </option>
+            )}
+          </select>
+        </label>
+
+        <label className='add-request-form-label'>
+          Категория:
+          <select
+            className='add-request-form-input'
+            name='category'
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+          >
+            <option>Выберите категорию</option>
+            {request.categories.map(category => 
+              <option
+                key={category.id}
+                value={category.id}
+              >
+                {category.name}
+              </option>
+            )}
+          </select>
+        </label>
+
+        <label className='add-request-form-label'>
+          Описание:
+          <input
+            className='add-request-form-input'
+            type='text'
+            placeholder='Введите описание'
+            value={description}
+            onChange={e => setDescription(e.target.value)}
+          />
+        </label>
+        <button className='add-request-form-btn' type='submit'>
           Зарегистрировать
         </button>
-      </div>
+      </form>
     </main>
   );
 };

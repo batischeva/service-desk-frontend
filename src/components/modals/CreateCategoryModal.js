@@ -4,11 +4,16 @@ import { createCategory } from '../../http/requestAPI';
 
 const CreateCategoryModal = ({modalActive, setModalActive}) => {
   const [value, setValue] = useState('');
-  const addCategory = () => {
-    createCategory({name: value}).then(data => {
-      setValue('');
+
+  const addCategory = async () => {
+    try {
+      await createCategory({name: value});
       alert('Категория успешно добавлена!');
-    })
+      setValue('');
+      setModalActive(false);
+    } catch (e) {
+      alert(e.response.data.message);
+    }
   };
 
   return (
@@ -26,10 +31,9 @@ const CreateCategoryModal = ({modalActive, setModalActive}) => {
             onChange={e => setValue(e.target.value)}
           />
         </fieldset>
-        <button className='admin-form-btn' onClick={(event) => {
-          event.preventDefault();
+        <button className='admin-form-btn' onClick={(e) => {
+          e.preventDefault();
           addCategory();
-          setModalActive(false);
         }}>
           Добавить
         </button>

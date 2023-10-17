@@ -21,9 +21,3 @@ header {
   font-size: 24px;
   font-weight: 300;
 }
-
-.header-company-link-arrow {
-  width: 10px;
-  height: 10px;
-  background: url('../icon/header-arrow.svg') no-repeat center center;
-}
