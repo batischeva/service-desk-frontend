@@ -16,10 +16,10 @@ const ControlPanel = () => {
           Создать обращение
         </button>
       </div>
-      <form action="" method="get" className='search-block'>
+      {/* <form action="" method="get" className='search-block'>
         <input name="s" placeholder="Поиск" type="search" className='search' />
         <button type="submit" className='search-btn'></button>
-      </form>
+      </form> */}
       <div className='pagination-block'>
         <PaginationArrowPrevious className='pagination-btn' />
         1 - 10

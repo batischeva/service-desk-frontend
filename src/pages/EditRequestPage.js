@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import '../style/AddRequestPage.css';
 import { REQUESTS_ROUTE } from '../utils/consts';
 import { Context } from '../index';
-import { createRequest, fetchAgents, fetchCategories, fetchClients, fetchPriorities } from '../http/requestAPI';
+import { createRequest, fetchAgents, fetchCategories, fetchClients, fetchOneRequest, fetchPriorities } from '../http/requestAPI';
 import { useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
-const AddRequestPage = () => {
+const EditRequestPage = () => {
+  const {id} = useParams();
   const history = useHistory();
   const {request} = useContext(Context);
 
@@ -14,42 +16,25 @@ const AddRequestPage = () => {
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState('');
   const [agent, setAgent] = useState('');
+  const [req, setReq] = useState('');
 
   useEffect(() => {
     fetchClients().then(data => setClient(data));
     fetchCategories().then(data => setCategory(data));
     fetchPriorities().then(data => setPriority(data));
     fetchAgents().then(data => setAgent(data));
+    fetchOneRequest(id).then(data => setReq(data));
   }, []);
-  
-  const addRequest = async () => {
-    try {
-      await createRequest({
-        description: description,
-        clientId: client,
-        categoryId: category,
-        priorityId: priority,
-        agentId: agent,
-      });
-      alert('Обращение успешно зарегистрировано!');
-      history.push(REQUESTS_ROUTE);
-    } catch (e) {
-      alert(e.response.data.message);
-    }
-  };
 
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>
         <button className='internal-page-link-back' onClick={() => history.push(REQUESTS_ROUTE)}/>
         <h1>
-          Создание нового обращения
+        Обращение № {req.id}
         </h1>
       </div>
-      <form className='add-request-form' onSubmit={(e) => {
-          e.preventDefault();
-          addRequest();
-        }}>
+      <form className='add-request-form'>
         <label className='add-request-form-label'>
           Инициатор:
           <select
@@ -140,12 +125,12 @@ const AddRequestPage = () => {
             onChange={e => setDescription(e.target.value)}
           />
         </label>
-        <button className='add-request-form-btn' type='submit'>
+        {/* <button className='add-request-form-btn' type='submit'>
           Зарегистрировать
-        </button>
+        </button> */}
       </form>
     </main>
   );
 };
 
-export default AddRequestPage;
+export default EditRequestPage;

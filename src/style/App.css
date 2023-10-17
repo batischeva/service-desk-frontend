@@ -103,6 +103,7 @@ h2 {
   color: #fff;
   background-color: #565568;
   cursor: pointer;
+  outline: 0;
 }
 
 .btn:hover {
@@ -119,4 +120,5 @@ h2 {
   width: 35px;
   height: 35px;
   background: url('../icon/back-request-arrow.svg') no-repeat center center;
+  cursor: pointer;
 }

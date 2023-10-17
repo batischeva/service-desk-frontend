@@ -64,3 +64,8 @@ export const fetchOneRequest = async (id) => {
   const {data} = await $host.get('api/request/' + id);
   return data;
 };
+
+export const deleteRequest = async (id) => {
+  const {res} = await $host.delete('api/request/delete/' + id);
+  return res;
+};

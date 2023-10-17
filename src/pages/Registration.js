@@ -29,7 +29,7 @@ const Registration = () => {
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>
-        <a href={ADMIN_ROUTE} className='internal-page-link-back'> </a>
+        <button className='internal-page-link-back' onClick={() => history.push(ADMIN_ROUTE)}/>
         <h1>
           Регистрация пользователя
         </h1>

@@ -3,13 +3,15 @@ import { REQUESTS_ROUTE } from '../utils/consts';
 import '../style/RequestInfo.css';
 import { useParams } from 'react-router-dom';
 import { fetchOneRequest } from '../http/requestAPI';
+import { useHistory } from 'react-router-dom';
 
 const RequestInfo = () => {
   const [request, setRequest] = useState({});
   const {id} = useParams();
+  const history = useHistory();
 
   useEffect(() => {
-    fetchOneRequest(id).then(data => setRequest(data)).catch(err => console.log(err));
+    fetchOneRequest(id).then(data => setRequest(data));
   }, []);
 
   console.log(request)
@@ -17,7 +19,7 @@ const RequestInfo = () => {
   return (
     <main className='main'>
       <div className='internal-page-control-panel'>
-        <a href={REQUESTS_ROUTE} className='internal-page-link-back'> </a>
+        <button className='internal-page-link-back' onClick={() => history.push(REQUESTS_ROUTE)}/>
         <h1 className='requests-title'>
           Обращение № {request.id}
         </h1>
