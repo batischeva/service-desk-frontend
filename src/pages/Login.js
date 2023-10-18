@@ -15,7 +15,8 @@ const Login = observer(() => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signIn = async () => {
+  const signIn = async (e) => {
+    e.preventDefault();
     try {
       const data = await login(email, password);
       user.setUser(data);
@@ -34,7 +35,7 @@ const Login = observer(() => {
           <h1 className='login-header'>
             Вход в систему
           </h1>
-          <form className='login-form'>
+          <form className='login-form' onSubmit={signIn}>
             <input
                 className='login-form-input'
                 type='text'
@@ -49,7 +50,7 @@ const Login = observer(() => {
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
-            <button className='login-form-btn' onClick={signIn}>
+            <button className='login-form-btn' type='submit'>
               Войти
             </button>
           </form>

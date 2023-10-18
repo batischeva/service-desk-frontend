@@ -6,7 +6,7 @@ import {ADMIN_ROUTE, REQUESTS_ROUTE, ADD_REQUEST_ROUTE, REGISTRATION_ROUTE, LOGI
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
-import EditRequestPage from "./pages/EditRequestPage";
+// import EditRequestPage from "./pages/EditRequestPage";
 
 export const authRoutes = [
   {
